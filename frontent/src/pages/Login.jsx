@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { serverUrl } from '../main';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setuserdata } from '../redux/userslice';
+import { setselecteduser, setuserdata } from '../redux/userslice';
 
 function Login() {
 
@@ -36,9 +36,10 @@ function Login() {
     );
     // console.log(result.data);
      dispatch(setuserdata(result.data))
+     dispatch(setselecteduser(null))
      setloading(false)
      
-    //  navigate("/");
+     navigate("/");
 
   } catch (error) {
     console.log(error );

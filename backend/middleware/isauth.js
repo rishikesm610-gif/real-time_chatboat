@@ -9,7 +9,7 @@ const isauth=async (req,res,next)=>{
         }
 
         let verifytoken = await jwt.verify(token, process.env.JWT_SECRET)
-        console.log(verifytoken)
+        // console.log(verifytoken)
         req.userid=verifytoken.userid
         next()
         

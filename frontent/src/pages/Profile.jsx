@@ -49,6 +49,7 @@ function Profile() {
 const handleprofile = async (e) => {
     e.preventDefault();
     setsaving(true);
+    navigate("/")
 
     try {
         const formdata = new FormData();
